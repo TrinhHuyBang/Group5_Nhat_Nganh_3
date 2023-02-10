@@ -1,26 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @book.title %>
+  <strong>Id:</strong>
+  <%= @book.id %>
 </p>
 
 <p>
-  <strong>Number of pages:</strong>
-  <%= @book.number_of_pages %>
+  <strong>Name:</strong>
+  <%= @book.name %>
 </p>
 
 <p>
-  <strong>Detail:</strong>
-  <%= @book.detail %>
+  <strong>Description:</strong>
+  <%= @book.description %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
 
 <p>
+  <strong>Color:</strong>
+  <%= @book.color %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @book.quantity %>
+</p>
+
+<p>
+  <strong>Id Producer:</strong>
+  <%= @book.id_producer %>
+</p>
+
+<!-- <p>
    <% if @book.image.attached? %>
      <%= image_tag @book.image %>
    <% end %>
- </p>
+ </p> -->
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
