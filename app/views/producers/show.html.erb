@@ -1,24 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid d-flex flex-column gap-2">
+  <div>
+    <p style="color: green"><%= notice %></p>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @producer.name %>
-</p>
+  <div class="d-flex gap-2">
+    <div id="<%= dom_id @producer %>">
+      <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Producer name:</h5>
+      <p class="card-text"><%= @producer.name ? @producer.name : "No name" %></p>
+      <h5 class="card-title">Email:</h5>
+      <p class="card-text"><%= @producer.email ? @producer.email : "0" %></p>
+      <h5 class="card-title">Address:</h5>
+      <p class="card-text"> <%= @producer.address ? @producer.address : "No address" %></p>
+      <h5 class="card-title">Phone number:</h5>
+      <p class="card-text"> <%= @producer.phone ? @producer.phone : "No phone" %></p>
+    </div>
+  </div>
+</div>
+    <div>
+        <div style = "width: 500px ;">
+            <%= link_to "Edit this producer", edit_producer_path(@producer), class: "btn btn-primary" , :style => "width: 200px ; margin-top: 30px;" %> 
+        </div>
+        <div>
+            <%= link_to "Back to producers", producers_path, class: "btn btn-primary", :style => "width: 200px ; margin-top: 50px;" %>
+        </div>
+        
+        <div>
+            <%= button_to "Destroy this producer", @producer, method: :delete, class: "btn btn-danger mt-5", :style => "width: 200px ;" %>
+        </div>
+      
+    </div>
+    
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @producer.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @producer.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @producer.phone %>
-</p>
-
-<%= link_to 'Edit', edit_producer_path(@producer) %> |
-<%= link_to 'Back', producers_path %>

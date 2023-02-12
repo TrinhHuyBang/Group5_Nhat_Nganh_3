@@ -1,33 +1,29 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-<h1>Producers</h1>
+<h1 style="text-align: center;">Producers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="producers">
+  <div class="container mh-100 mw-100 d-flex justify-content-center align-items-center">
     <% @producers.each do |producer| %>
-      <tr>
-        <td><%= producer.name %></td>
-        <td><%= producer.email %></td>
-        <td><%= producer.address %></td>
-        <td><%= producer.phone %></td>
-        <td><%= link_to 'Show', producer %></td>
-        <td><%= link_to 'Edit', edit_producer_path(producer) %></td>
-        <td><%= link_to 'Destroy', producer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        
+        <div id="<%= dom_id producer %>">
+      <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Producer name:</h5>
+      <p class="card-text"><%= producer.name ? producer.name : "No name" %></p>
+      <h5 class="card-title">Email:</h5>
+      <p class="card-text"><%= producer.email ? producer.email : "0" %></p>
+      <h5 class="card-title">Address:</h5>
+      <p class="card-text"> <%= producer.address ? producer.address : "No address" %></p>
+      <h5 class="card-title">Phone number:</h5>
+      <p class="card-text"> <%= producer.phone ? producer.phone : "No phone" %></p>
+      <%= link_to "Show this producer", producer, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+        
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Producer', new_producer_path %>
+  </div>
+</div>
+<div style="text-align: center;" class="mt-5">
+  <%= link_to "New producer", new_producer_path, class: "btn btn-primary" %>

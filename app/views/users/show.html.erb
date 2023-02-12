@@ -1,21 +1,33 @@
 
-<h1>プロフィール</h1>
-
-<p>
- <% if current_user.avatar.attached? %>
-   <%= image_tag current_user.avatar %>
- <% end %>
-</p>
-
-<h3>メールアドレス：
-  <%= current_user.email %>
-</h3>
-
-<h3>名前：
-  <%= current_user.name %>
-</h3>
-
-<h3>年齢：
-  <%= current_user.age %>
-</h3>
-
+<section class="vh-100" style="background-color: #9de2ff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-9 col-lg-7 col-xl-5">
+        <div class="card" style="border-radius: 15px; width: 120%">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0">
+                  <% if current_user.avatar.attached? %>
+                  <div >
+                      
+                <%= image_tag(current_user.avatar, style: 'width: 180px; height: 180px; border-radius: 10px;') %>
+                </div>
+                <% else %> 
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                  alt="Generic placeholder image" class="img-fluid"
+                  style="width: 180px; height: 180px; border-radius: 10px;">
+            <% end %>
+              </div>
+              <div class="flex-grow-1 ms-3" style="margin-top: 30px; min-width:100% ">
+                <p style="font-size:30px;" class="mb-1">Name: <%= current_user.name ? current_user.name : "" %></p>
+                <p style="font-size:20px; margin-top: 30px;" class="mb-2 pb-1" style="color: #2b2a2a;">Email: <%= current_user.email %></p>
+                <p style="font-size:20px; margin-top: 20px;" class="mb-2 pb-1" style="color: #2b2a2a;">Age: <%= current_user.age %></p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
