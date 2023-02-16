@@ -1,75 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<!-- <p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p> -->
-
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @book.price %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @book.color %>
-</p>
-
-<p>
-  <strong>Qauntity:</strong>
-  <%= @book.quantity %>
-</p>
-
-<p>
-  <strong>Id_prodcuer:</strong>
-  <%= @book.id_producer %>
-</p>
-
-<!-- <p>
-  <strong>Number of pages:</strong>
-  <%= @book.number_of_pages %>
-</p> -->
-
-<!-- <p>
-  <strong>Detail:</strong>
-  <%= @book.detail %>
-</p> -->
-
-
-<p>
-   <% if @book.image.attached? %>
-     <%= image_tag @book.image %>
-   <% end %>
- </p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
-<%= form_with(model: @book_review) do |form| %>
-  <h2>Review Form</h2>
+<div class="container-fluid d-flex flex-column gap-2">
   <div>
-    <%= form.label :review, style: "display: block" %>
-    <%= form.text_area :review %>
-    <%= form.hidden_field :user_id, :value => current_user.id %>
-    <%= form.hidden_field :book_id, :value => @book.id %>
+    <p id="notice" style="color: green"><%= notice %></p>
   </div>
-  <div>
-    <%= form.submit %>
+  
+  <div class="d-flex gap-2">
+    <div id="<%= dom_id @book %>">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Smart Phone Name:</h5>
+            <p class="card-text"><%= @book.name ? @book.name : "No name" %></p>
+            <h5 class="card-title">Description:</h5>
+            <p class="card-text"><%= @book.description ? @book.description : "No description" %></p>
+            <h5 class="card-title">Price:</h5>
+            <p class="card-text"> <%= @book.price ? @book.price : "No price" %></p>
+            <h5 class="card-title">Color:</h5>
+            <p class="card-text"> <%= @book.color ? @book.color : "No color" %></p>
+            <h5 class="card-title">Quantity:</h5>
+            <p class="card-text"> <%= @book.quantity ? @book.quantity : "No quantity" %></p>
+            <h5 class="card-title">Producer Name:</h5>
+            <p class="card-text"> <%= @book.producer_name ? @book.producer_name : "No producer name" %></p>
+        </div>
+      </div>
+    </div>
+    <div>
+        <div style = "width: 500px ;">
+            <%= link_to "Edit this smart phone", edit_book_path(@book), class: "btn btn-primary" , :style => "width: 200px ; margin-top: 30px;" %> 
+        </div>
+        <div>
+            <%= link_to "Back to Smart Phones", books_path, class: "btn btn-primary", :style => "width: 200px ; margin-top: 50px;" %>
+        </div>
+        
+        <div>
+            <%= button_to "Destroy this book", @book, method: :delete, class: "btn btn-danger mt-5", :style => "width: 200px ;" %>
+        </div>
+      
+    </div>
+    
   </div>
-<% end %>
-
-<h2>Review list</h2>
-  <ul>
-    <% @book.book_review.each do |book_review| %>
-      <li><%= book_review.review %> (<i><%= book_review.user.name %></i>)</li>
-    <% end %>
-  </ul>
+</div>

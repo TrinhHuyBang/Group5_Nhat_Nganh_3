@@ -10,58 +10,33 @@
       </ul>
     </div>
   <% end %>
-
-  <!-- <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div> -->
   
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :color, style: "display: block" %>
+    <%= form.text_field :color, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity, class: "form-control" %>
   </div>
-  
-  <div class="field">
-    <%= form.label :id_producer %>
-    <%= form.number_field :id_producer %>
+  <div class="form-group" style="width: 40%;">
+    <%= form.label :producer_name, style: "display: block" %>
+    <%= form.text_field :producer_name, class: "form-control" %>
   </div>
 
-  <!-- <div class="field">
-    <%= form.label :number_of_pages %>
-    <%= form.number_field :number_of_pages %>
-  </div> -->
-  
-  <!-- <div class="field">
-    <%= form.label :detail %>
-    <%= form.text_field :detail %>
-  </div> -->
-
-  <!-- <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %><br>
-  </div> -->
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group mt-3 actions">
+    <%= form.submit 'New Smart Phone', :class => "btn btn-primary"  %>
   </div>
 <% end %>
