@@ -38,3 +38,23 @@
     
   </div>
 </div>
+<h2>Review List</h2>
+<ul>
+  <% @book.book_review.each do |book_review|%>
+    <li><%= book_review.review %>(<i><%= book_review.user.name %></i>)</li>
+  <% end %>
+</ul>
+<h2>Review Form</h2>
+<%= form_with(model: @book_review, local: true) do |form| %>
+  <div class= "field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :book_id, :value => @book.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
