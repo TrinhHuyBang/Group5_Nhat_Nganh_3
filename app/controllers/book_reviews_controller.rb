@@ -27,7 +27,7 @@ class BookReviewsController < ApplicationController
       url = "/books/#{@book_review.book_id.to_s}"
       if @book_review.save
         url = "/books/" + @book_review.book_id.to_s
-        format.html { redirect_to url, notice: 'Book review was successfully created.' }
+        format.html { redirect_to url, notice: 'Phone review was successfully created.' }
         format.json { render :show, status: :created, location: @book_review }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class BookReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @book_review.update(book_review_params)
-        format.html { redirect_to book_review_url(@book_review), notice: "Book review was successfully updated." }
+        format.html { redirect_to book_review_url(@book_review), notice: "Phone review was successfully updated." }
         format.json { render :show, status: :ok, location: @book_review }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class BookReviewsController < ApplicationController
     @book_review.destroy
 
     respond_to do |format|
-      format.html { redirect_to book_reviews_url, notice: "Book review was successfully destroyed." }
+      format.html { redirect_to book_reviews_url, notice: "Phone review was successfully destroyed." }
       format.json { head :no_content }
     end
   end

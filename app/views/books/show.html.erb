@@ -48,13 +48,13 @@
 <%= form_with(model: @book_review, local: true) do |form| %>
   <div class= "field">
     <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.hidden_field :user_id, :value => @book.id %>
   </div>
   <div class= "field">
     <%= form.text_area :review %>
     <%= form.hidden_field :book_id, :value => @book.id %>
   </div>
-  <div class="actions">
+  <div class="actions" name= "add review phone">
     <%= form.submit %>
   </div>
 <% end %>
