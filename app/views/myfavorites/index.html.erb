@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Myfavorites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Smart phone name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Color</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @myfavorites.each do |myfavorite| %>
+      <tr>
+        <td><%= myfavorite.smart_phone_name %></td>
+        <td><%= myfavorite.description %></td>
+        <td><%= myfavorite.price %></td>
+        <td><%= myfavorite.color %></td>
+        <td><%= link_to 'Show', myfavorite %></td>
+        <td><%= link_to 'Edit', edit_myfavorite_path(myfavorite) %></td>
+        <td><%= link_to 'Destroy', myfavorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Myfavorite', new_myfavorite_path %>

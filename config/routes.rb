@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
     
+  resources :myfavorites
+  resources :favorites
   resources :producers
   resources :book_reviews
   get 'users/show'
