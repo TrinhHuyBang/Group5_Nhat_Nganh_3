@@ -53,11 +53,6 @@ ActiveRecord::Schema.define(version: 2023_02_16_150013) do
     t.string "producer_name"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "myfavorites", force: :cascade do |t|
     t.string "smart_phone_name"
     t.string "description"
